@@ -1,5 +1,5 @@
 exports.up = (knex, Promise) =>
-  knex.schema.createTable("unit-conversions", tbl => {
+  knex.schema.createTable("UnitConversions", tbl => {
     tbl
       .integer("FromUnit")
       .unsigned()
@@ -21,4 +21,4 @@ exports.up = (knex, Promise) =>
   });
 
 exports.down = (knex, Promise) =>
-  knex.schema.dropTableIfExists("unit-conversions");
+  knex.schema.dropTableIfExists("UnitConversions");

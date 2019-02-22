@@ -6,6 +6,9 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 
+// Converts all Name fields to uppercase - used in enforcing  uniqueness of row values
+const namesToUpperCase = require("./middleware/custom/namesToUpperCase");
+
 const rootRouter = require("./routes/rootRouter");
 const errorRouter = require("./routes/errorRouter");
 
@@ -19,6 +22,9 @@ server.use(express.json());
 server.use(cors());
 server.use(helmet());
 server.use(morgan("dev"));
+
+// custom middleware (general)
+server.use(namesToUpperCase);
 
 // custom routing middleware
 server.use("/", rootRouter); // routing for root URL
