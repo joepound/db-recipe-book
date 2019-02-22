@@ -5,7 +5,13 @@ module.exports = {
     connection: {
       filename: "./recipe-book.sqlite3"
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
+    migrations: {
+      directory: './migrations'
+    },
+    seeds: {
+      directory: './seeds'
+    }
     // Will not turn on foreign key constraints to enable deletion (this is needed to allow seeds to run)
   },
 
@@ -21,6 +27,12 @@ module.exports = {
         // Ensure that foreign key constraints will be enabled
         conn.run("PRAGMA foreign_keys = ON", done);
       }
+    },
+    migrations: {
+      directory: "./data/migrations"
+    },
+    seeds: {
+      directory: './data/seeds'
     }
   },
 
@@ -35,6 +47,12 @@ module.exports = {
         // Ensure that foreign key constraints will be enabled
         conn.run("PRAGMA foreign_keys = ON", done);
       }
+    },
+    migrations: {
+      directory: './data/migrations'
+    },
+    seeds: {
+      directory: './data/seeds'
     }
   }
 };

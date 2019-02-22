@@ -3,6 +3,7 @@ exports.up = (knex, Promise) =>
     tbl
       .integer("RecipeID")
       .unsigned()
+      .notNullable()
       .references("RecipeID")
       .inTable("Recipes")
       .onDelete("RESTRICT")
@@ -10,6 +11,7 @@ exports.up = (knex, Promise) =>
     tbl
       .integer("IngredientID")
       .unsigned()
+      .notNullable()
       .references("IngredientID")
       .inTable("Ingredients")
       .onDelete("RESTRICT")

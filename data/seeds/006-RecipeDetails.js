@@ -35,5 +35,17 @@ exports.seed = (knex, Promise) =>
           IngredientQuantity: 2.5,
           MeasurementUnitID: 1
         },
+        {
+          RecipeID: 3,
+          IngredientID: 1,
+          IngredientQuantity: 1,
+          MeasurementUnitID: 3
+        },
+        {
+          RecipeID: 3,
+          IngredientID: 2,
+          IngredientQuantity: 1.25,
+          MeasurementUnitID: 1
+        },
       ])
     );

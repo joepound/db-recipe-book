@@ -11,6 +11,7 @@ const namesToUpperCase = require("./middleware/custom/namesToUpperCase");
 
 const rootRouter = require("./middleware/routes/rootRouter");
 const dishesRouter = require("./middleware/routes/dishes/router");
+const recipesRouter = require("./middleware/routes/recipes/router");
 const errorRouter = require("./middleware/routes/errorRouter");
 
 // server setup
@@ -30,6 +31,7 @@ server.use(namesToUpperCase);
 // custom routing middleware
 server.use("/", rootRouter); // routing for root URL
 server.use("/api/dishes", dishesRouter);
+server.use("/api/recipes", recipesRouter);
 server.use(errorRouter); // routing for URL's resolving to bad queries
 
 module.exports = server;

@@ -6,18 +6,18 @@ exports.seed = (knex, Promise) =>
       // Inserts seed entries
       knex("Recipes").insert([
         {
-          RecipeName: "Hawaiian Pizza".toUpperCase(),
-          RecipeInstructions: "Mix 'em all!",
-          DishID: 1
-        },
-        {
           RecipeName: "Tex-mex".toUpperCase(),
           RecipeInstructions: "Flick it....",
-          DishID: 2
+          DishID: 1
         },
         {
           RecipeName: "Granny's".toUpperCase(),
           RecipeInstructions: "Flick it....",
+          DishID: 1
+        },
+        {
+          RecipeName: "Hawaiian Pizza".toUpperCase(),
+          RecipeInstructions: "Mix 'em all!",
           DishID: 2
         }
       ])
