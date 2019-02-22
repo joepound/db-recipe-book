@@ -27,13 +27,6 @@ module.exports = {
         // Ensure that foreign key constraints will be enabled
         conn.run("PRAGMA foreign_keys = ON", done);
       }
-    },
-    migrations: {
-      tableName: 'knex_migrations',
-      directory: "./data/migrations"
-    },
-    seeds: {
-      directory: './data/seeds'
     }
   },
 
