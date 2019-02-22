@@ -6,12 +6,9 @@ exports.up = (knex, Promise) =>
       .unique()
       .notNullable();
     tbl
-      .integer("QuantityTypeID")
-      .unsigned()
-      .references("QuantityTypeID")
-      .inTable("QuantityTypes")
-      .onDelete("RESTRICT")
-      .onUpdate("CASCADE");
+      .string("MeasurementUnitAbbrev")
+      .unique()
+      .notNullable();
     tbl.timestamps(true, true);
   });
 

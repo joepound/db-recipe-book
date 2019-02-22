@@ -5,15 +5,15 @@ exports.up = (knex, Promise) =>
       .unsigned()
       .references("MeasurementUnitID")
       .inTable("MeasurementUnits")
-      .onDelete("RESTRICT")
-      .onUpdate("CASCADE");
+      // .onDelete("RESTRICT")
+      // .onUpdate("CASCADE");
     tbl
       .integer("ToUnit")
       .unsigned()
       .references("MeasurementUnitID")
       .inTable("MeasurementUnits")
-      .onDelete("RESTRICT")
-      .onUpdate("CASCADE");
+      // .onDelete("RESTRICT")
+      // .onUpdate("CASCADE");
     tbl.double("ConversionValue").notNullable();
     tbl.timestamps(true, true);
 

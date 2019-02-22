@@ -5,7 +5,7 @@ exports.seed = (knex, Promise) =>
     .then(() =>
       // Inserts seed entries
       knex("Dishes").insert([
-        { DishName: "TACO" },
-        { DishName: "PIZZA" },
+        { DishName: "Taco".toUpperCase() },
+        { DishName: "Pizza".toUpperCase() },
       ])
     );

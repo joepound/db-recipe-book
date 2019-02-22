@@ -5,12 +5,8 @@ module.exports = {
     connection: {
       filename: "./recipe-book.sqlite3"
     },
-    useNullAsDefault: true,
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run("PRAGMA foreign_keys = ON", done);
-      }
-    }
+    useNullAsDefault: true
+    // Will not turn on foreign key constraints to enable deletion (this is needed to allow seeds to run)
   },
 
   // For actual dev use
@@ -22,6 +18,7 @@ module.exports = {
     useNullAsDefault: true,
     pool: {
       afterCreate: (conn, done) => {
+        // Ensure that foreign key constraints will be enabled
         conn.run("PRAGMA foreign_keys = ON", done);
       }
     }
@@ -35,6 +32,7 @@ module.exports = {
     useNullAsDefault: true,
     pool: {
       afterCreate: (conn, done) => {
+        // Ensure that foreign key constraints will be enabled
         conn.run("PRAGMA foreign_keys = ON", done);
       }
     }

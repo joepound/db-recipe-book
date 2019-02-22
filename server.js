@@ -9,8 +9,9 @@ const morgan = require("morgan");
 // Converts all Name fields to uppercase - used in enforcing  uniqueness of row values
 const namesToUpperCase = require("./middleware/custom/namesToUpperCase");
 
-const rootRouter = require("./routes/rootRouter");
-const errorRouter = require("./routes/errorRouter");
+const rootRouter = require("./middleware/routes/rootRouter");
+const dishesRouter = require("./middleware/routes/dishes/router");
+const errorRouter = require("./middleware/routes/errorRouter");
 
 // server setup
 const server = express();
@@ -28,6 +29,7 @@ server.use(namesToUpperCase);
 
 // custom routing middleware
 server.use("/", rootRouter); // routing for root URL
+server.use("/api/dishes", dishesRouter);
 server.use(errorRouter); // routing for URL's resolving to bad queries
 
 module.exports = server;

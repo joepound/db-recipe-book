@@ -14,7 +14,7 @@ exports.up = (knex, Promise) =>
       .inTable("Ingredients")
       .onDelete("RESTRICT")
       .onUpdate("CASCADE");
-    tbl.double("Quantity").notNullable();
+    tbl.double("IngredientQuantity").notNullable();
     tbl
       .integer("MeasurementUnitID")
       .unsigned()
