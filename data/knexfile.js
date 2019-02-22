@@ -5,7 +5,12 @@ module.exports = {
     connection: {
       filename: "./recipe-book.sqlite3"
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run("PRAGMA foreign_keys = ON", done);
+      }
+    }
   },
 
   // For actual dev use
@@ -14,7 +19,12 @@ module.exports = {
     connection: {
       filename: "./data/recipe-book.sqlite3"
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run("PRAGMA foreign_keys = ON", done);
+      }
+    }
   },
 
   production: {
@@ -22,6 +32,11 @@ module.exports = {
     connection: {
       filename: "./data/recipe-book.sqlite3"
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run("PRAGMA foreign_keys = ON", done);
+      }
+    }
   }
 };
