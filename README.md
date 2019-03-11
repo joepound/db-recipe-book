@@ -1,5 +1,7 @@
 # Recipe Book
 
+Server: https://joepound-ls-adpwa4.herokuapp.com/
+
 ## Topics
 
 - database modeling.
